@@ -1,0 +1,12 @@
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+<a href="#" id="sign_in">Sign in with Linkedin</a>
+
+<script>
+$("#sign_in").click(function() {
+    $.get("/api/sign_in/", function(data) {
+        window.location.replace(data.auth_url);
+    });
+    return false;
+});
+</script>
